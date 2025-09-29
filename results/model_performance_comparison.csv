@@ -1,0 +1,5 @@
+,accuracy,precision,recall,f1_score,roc_auc
+LightGBM,0.998,0.998,0.998,0.998,1.0
+XGBoost,0.9978,0.9978,0.9978,0.9978,1.0
+Random Forest,0.9974,0.9974,0.9974,0.9974,1.0
+SVM,0.9621,0.9629,0.9621,0.962,0.993

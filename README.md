@@ -1,6 +1,6 @@
-# Seattle Weather Analysis and Prediction
+# Network Attack Detection using Synthetic Data Generation
 
-This project analyzes Seattle weather data and implements a weather prediction model using both real and synthetic data generated through CTGAN.
+This project implements an advanced anomaly detection system for cybersecurity using CTGAN (Conditional Tabular GAN) to generate synthetic attack logs and machine learning models for detection.
 
 ## Project Structure
 
@@ -8,26 +8,63 @@ This project analyzes Seattle weather data and implements a weather prediction m
 📁 Project/
 ├── 📓 Notebooks/
 │ ├── 1_EDA.ipynb             # Exploratory Data Analysis
-│ ├── 2_CTGAN_Training.ipynb  # Synthetic Data Generation
-│ ├── 3_Model_Training.ipynb  # Weather Prediction Model
-│ └── 4_Visualization.ipynb   # Data Visualization
+│ ├── 2_CTGAN_Training.ipynb  # Synthetic Attack Log Generation
+│ ├── 3_Model_Training.ipynb  # Anomaly Detection Models
+│ └── 4_Visualization.ipynb   # Attack Pattern Analysis
 ├── 📁 Data/
-│ └── synthetic_weather.csv   # Generated synthetic data
-├── 📁 Models/
-│ ├── weather_model.pkl       # Trained Random Forest model
-│ └── scaler.pkl              # Feature scaler
-├── 📁 results/ 
-│ └── cross_validation_results.csv         
-├── seattle-weather.csv     # Original dataset
-└── app.py                    # Streamlit web application
+│ ├── Test_data.csv     # Original dataset
+│ └── Train_data.csv  #Trained dataset
+├── 📁 models/
+│ ├── best_cybersecurity_model.pkl    # Trained detection model
+│ ├── cybersecurity_ctgan_model.pkl    # CTGAN model
+│ ├── cybersecurity_scaler.pkl        # Scaler model
+│ ├── lightgbm_cybersecurity.pkl        # Lightgbm model
+│ ├── preprocessing_objects.pkl        # Preprocessing Object model
+│ ├── random_forest_cybersecurity.pkl     # Random Forest model
+│ ├── svm_cybersecurity.pkl              # SVM model
+│ ├── training_metadata.pkl               # Metadata model
+│ └── xgboost_cybersecurity.pkl             # XGBoost model
+├── 📁 results/
+│ ├── model_performance_comparison.csv 
+│ └── synthetic_cybersecurity_data.csv
+├── app.py                    # Streamlit web application
+└── README.md
+
 
 ## Features
 
-- Comprehensive EDA of Seattle weather patterns
-- Synthetic data generation using CTGAN
-- Weather prediction model using Random Forest
-- Interactive web application for predictions
-- Comparison visualizations of real vs synthetic data
+- Comprehensive EDA of network attack patterns
+- Synthetic attack log generation using CTGAN
+- Multiple anomaly detection models:
+  - Random Forest
+  - XGBoost
+  - LightGBM
+  - SVM
+- Interactive visualization dashboard
+- Real-time attack detection web interface
+
+## Dataset Description
+
+The project uses the Network Attack Dataset containing:
+- Network traffic features
+- Attack types and patterns
+- Temporal information
+- Protocol information
+- Attack severity levels
+
+## Models Implemented
+
+1. **CTGAN for Synthetic Data**
+   - Generates realistic attack patterns
+   - Preserves attack distributions
+   - Maintains feature correlations
+
+2. **Anomaly Detection Models**
+   - Random Forest Classifier
+   - XGBoost
+   - LightGBM
+   - SVM
+   - Evaluation metrics for security context
 
 ## Requirements
 
@@ -37,25 +74,47 @@ This project analyzes Seattle weather data and implements a weather prediction m
 - scikit-learn
 - sdv (Synthetic Data Vault)
 - streamlit
-- seaborn
-- matplotlib
+- plotly
+- xgboost
+- lightgbm
 
 ## Setup
 
 1. Clone the repository
 2. Install requirements: `pip install -r requirements.txt`
-3. Run the notebooks in order
-4. Launch the web app: `streamlit run app.py`
+3. Run notebooks in sequence
+4. Launch detection app: `streamlit run app.py`
 
-## Model Performance
+## Web Application Features
 
-The weather prediction model achieves the following performance metrics:
-- Accuracy: ~85%
-- Detailed metrics available in the Model Training notebook
+- Real-time network traffic analysis
+- Attack probability scoring
+- Attack type classification
+- Confidence metrics
+- Interactive visualizations
 
-## Web Application
+## Security Considerations
 
-The Streamlit web application allows users to:
-- Input weather parameters
-- Get instant weather predictions
-- View prediction confidence scores
+- Model interpretability for security teams
+- False positive/negative analysis
+- Attack pattern evolution tracking
+- Model retraining capabilities
+
+## Deployment Guidelines
+
+1. Regular model updates
+2. Performance monitoring
+3. Alert threshold configuration
+4. Integration with security systems
+
+## Performance Metrics
+
+- Detection Accuracy
+- False Positive Rate
+- False Negative Rate
+- Detection Latency
+- Model Confidence Scores
+
+## Contributors
+
+- [Priyanshu]
