@@ -8,7 +8,7 @@ from sklearn.preprocessing import LabelEncoder
 import warnings
 warnings.filterwarnings('ignore')
 
-# Load trained models & preprocessing objects
+# Load trained models & preprocessing object
 @st.cache_resource
 def load_models():
     try:
