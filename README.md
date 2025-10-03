@@ -28,6 +28,8 @@ This project implements an advanced anomaly detection system for cybersecurity u
 │ ├── model_performance_comparison.csv 
 │ └── synthetic_cybersecurity_data.csv
 ├── app.py                    # Streamlit web application
+├── GNCIPL Project ppt.pptx   # Presentation file of project
+├── GNCIPL Project report file.pdf  # Report file of project
 └── README.md
 
 
