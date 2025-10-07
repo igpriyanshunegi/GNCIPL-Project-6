@@ -448,7 +448,7 @@ if submitted:
                             color='Value',
                             color_continuous_scale='viridis')
                 fig.update_layout(height=400)
-                st.plotly_chart(fig, width='stretch')
+                st.plotly_chart(fig, use_container_width=True)
             
             # Display categorical features in a table
             if categorical_features:
