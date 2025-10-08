@@ -1,0 +1,15 @@
+# Core dependencies for GNCIPL Project 6
+streamlit
+pandas
+numpy
+scikit-learn
+plotly
+lightgbm
+xgboost
+seaborn
+matplotlib
+
+# Build dependencies
+setuptools>=65.0.0
+wheel
+pip>=21.0

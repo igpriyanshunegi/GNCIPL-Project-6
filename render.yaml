@@ -3,11 +3,11 @@ services:
     name: gncipl-project-6
     runtime: python3
     plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: streamlit run app.py --server.port=$PORT --server.address=0.0.0.0 --server.headless=true
+    buildCommand: pip install --upgrade pip setuptools wheel && pip install -r requirements_simple.txt
+    startCommand: chmod +x start.sh && ./start.sh
     envVars:
       - key: PYTHON_VERSION
-        value: 3.9.18
+        value: 3.11.9
       - key: PORT
         value: 10000
     healthCheckPath: /
