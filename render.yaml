@@ -1,0 +1,56 @@
+services:
+  - type: web
+    name: gncipl-project-6
+    runtime: python3
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.port=$PORT --server.address=0.0.0.0 --server.headless=true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.18
+      - key: PORT
+        value: 10000
+    healthCheckPath: /
+    autoDeploy: true
+    branch: main
+    rootDir: .
+    
+    # Environment configuration
+    env: python
+    
+    # Build settings
+    buildFilter:
+      paths:
+      - app.py
+      - requirements.txt
+      - models/**
+      - Data/**
+      - .streamlit/**
+      ignoredPaths:
+      - Notebooks/**
+      - results/**
+      - "*.md"
+      - "*.pdf"
+      - "*.pptx"
+    
+    # Health check configuration
+    healthCheck:
+      path: /_stcore/health
+      intervalSeconds: 30
+      timeoutSeconds: 10
+      unhealthyThresholdCount: 3
+      healthyThresholdCount: 2
+    
+    # Resource limits
+    disk:
+      name: gncipl-data
+      mountPath: /app/data
+      sizeGB: 1
+    
+    # Custom headers for security
+    headers:
+      - path: /*
+        headers:
+          X-Frame-Options: DENY
+          X-Content-Type-Options: nosniff
+          Referrer-Policy: strict-origin-when-cross-origin
